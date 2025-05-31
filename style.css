@@ -1,0 +1,480 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    color: #091747;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #091747;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: #0d2a7a;
+    background-color: #f0f2f8;
+}
+
+main {
+    margin-bottom: 40px;
+}
+
+main h1 {
+    color: #091747;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.flash-messages {
+    background-color: #f8f9fa;
+    border-left: 4px solid #091747;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 0 5px 5px 0;
+    text-align: left;
+}
+
+.flash-messages p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 2px solid #091747;
+    display: inline-block;
+    padding: 12px 25px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #091747;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.custom-file-upload:hover {
+    background-color: #f0f2f8;
+    transform: translateY(-2px);
+}
+
+#file-name {
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #555;
+}
+
+.file-types {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.upload-button {
+    background-color: #091747;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: all 0.3s;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+.upload-button:hover {
+    background-color: #0d2a7a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(9, 23, 71, 0.2);
+}
+
+#result-section {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#result-section h3 {
+    color: #091747;
+    margin-bottom: 15px;
+}
+
+#download-link {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+#download-link:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+}
+
+.email-form {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.email-form h4 {
+    color: #091747;
+    margin-bottom: 15px;
+}
+
+.email-form input[type="email"] {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+    margin-right: 10px;
+}
+
+.email-form button {
+    padding: 10px 20px;
+    background-color: #091747;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.email-form button:hover {
+    background-color: #0d2a7a;
+}
+
+.login-prompt {
+    margin-top: 20px;
+    color: #666;
+}
+
+.login-prompt a {
+    color: #091747;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.feature {
+    flex: 1 1 250px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+    color: #091747;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #555;
+    font-size: 0.95em;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #091747;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para formulários de autenticação */
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.auth-button {
+    background-color: #091747;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: all 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-button:hover {
+    background-color: #0d2a7a;
+}
+
+.auth-link {
+    margin-top: 20px;
+    color: #666;
+}
+
+.auth-link a {
+    color: #091747;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para a página de histórico */
+.history-container {
+    margin-top: 20px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.history-table th, .history-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.history-table th {
+    background-color: #091747;
+    color: white;
+    font-weight: 500;
+}
+
+.history-table tr:last-child td {
+    border-bottom: none;
+}
+
+.history-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.action-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #091747;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
+.action-link:hover {
+    background-color: #0d2a7a;
+}
+
+.inline-form {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.inline-form input[type="email"] {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 150px;
+    font-size: 0.9em;
+}
+
+.small-button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.small-button:hover {
+    background-color: #218838;
+}
+
+.empty-history {
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.empty-history p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    header {
+        flex-direction: column;
+    }
+    
+    nav {
+        margin-top: 15px;
+    }
+    
+    .features {
+        flex-direction: column;
+    }
+    
+    .upload-button {
+        width: 100%;
+    }
+    
+    .email-form input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    
+    .history-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .inline-form {
+        display: block;
+        margin-top: 10px;
+    }
+    
+    .inline-form input[type="email"] {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI.BNT - Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="{{ url_for('index') }}">
+                    <div class="logo-text">AI.BNT</div>
+                </a>
+            </div>
+        </header>
+        <main>
+            <h1>Criar uma nova conta</h1>
+            
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            
+            <div class="auth-form">
+                <form action="{{ url_for('register') }}" method="post">
+                    <div class="form-group">
+                        <label for="name">Nome completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="auth-button">Cadastrar</button>
+                </form>
+                <p class="auth-link">
+                    Já tem uma conta? <a href="{{ url_for('login') }}">Faça login</a>
+                </p>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2025 AI.BNT - Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Suporte</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

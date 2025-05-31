@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI.BNT - Histórico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="{{ url_for('index') }}">
+                    <div class="logo-text">AI.BNT</div>
+                </a>
+            </div>
+            <nav>
+                <a href="{{ url_for('index') }}" class="nav-link">Início</a>
+                <a href="{{ url_for('logout') }}" class="nav-link">Sair</a>
+            </nav>
+        </header>
+        <main>
+            <h1>Seu Histórico de Documentos</h1>
+            
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            
+            <div class="history-container">
+                {% if documents %}
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Documento Original</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for doc in documents %}
+                            <tr>
+                                <td>{{ doc.original_name }}</td>
+                                <td>{{ doc.date }}</td>
+                                <td>
+                                    <a href="{{ url_for('download_file', filename=doc.formatted_name) }}" class="action-link">Baixar</a>
+                                    <form action="{{ url_for('send_email') }}" method="post" class="inline-form">
+                                        <input type="hidden" name="filename" value="{{ doc.formatted_name }}">
+                                        <input type="email" name="email" placeholder="Email" required>
+                                        <button type="submit" class="small-button">Enviar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <div class="empty-history">
+                        <p>Você ainda não formatou nenhum documento.</p>
+                        <a href="{{ url_for('index') }}" class="action-link">Formatar um documento agora</a>
+                    </div>
+                {% endif %}
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2025 AI.BNT - Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Suporte</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
